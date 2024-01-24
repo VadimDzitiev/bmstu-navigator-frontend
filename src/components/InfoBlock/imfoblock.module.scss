@@ -1,0 +1,37 @@
+@import "../../styles/variables.scss";
+// imfoblock.module.scss
+
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+
+.infoblock {
+  background-color: $primary-color;
+  color: white;
+  padding: 20px;
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .infoblock__title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__title_text {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      &__title_gif {
+        width: 50px; // Укажите нужную ширину
+        height: auto; // Высота автоматически подстраивается
+      }
+    }
+
+    .infoblock__subtitle {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  }
+}
