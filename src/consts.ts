@@ -1,23 +1,6 @@
 export const DOMEN = "http://127.0.0.1:8000/";
 
-export const CATEGORIES = [
-  {
-    id: 0,
-    name: "Любая категория",
-  },
-  {
-    id: 1,
-    name: "Салоны",
-  },
-  {
-    id: 2,
-    name: "Двигатели",
-  },
-  {
-    id: 3,
-    name: "Авионика",
-  },
-];
+
 // import engine from "./assets/engine.png"
 export const OptionsMock = [
   {

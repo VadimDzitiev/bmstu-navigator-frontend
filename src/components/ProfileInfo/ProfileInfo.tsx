@@ -27,10 +27,8 @@ const ProfileInfo = () => {
       dispatch(cleanUser());
       toast.success("Выход выполнен успешно",);
 
-      navigate("/Bmstu-navigator");
-    } catch {
-      console.log("kaka");
-    }
+      navigate("/Bmstu-navigator/");
+    } catch {}
   };
 
   const handleSubmit = async () => {

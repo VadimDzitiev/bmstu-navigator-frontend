@@ -5,11 +5,13 @@
   display: flex;
   flex-direction: column;
   width: 70%;
-
+  margin-top: 70px;
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: end;
+    margin: 50 auto;
+    
 
     &_title {
       font-weight: 800;
@@ -36,15 +38,15 @@
     &_back {
       border-radius: 30px;
       &:hover {
-        background-color: $brand-color;
+        background-color: #5c6fff;
       }
     }
     &_send {
       border-radius: 30px;
-      background-color: $brand-color;
-      color: #fff;
+      background-color: #ffffff;
+      color: #000000;
       &:hover {
-        background-color: #30b4b4;
+        background-color: #5c6fff;
       }
     }
   }

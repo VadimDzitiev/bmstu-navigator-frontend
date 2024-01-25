@@ -133,7 +133,7 @@ const Cart = () => {
           ))}
         </div>
         <div className={styles.cart__actions}>
-          <Link to="/Bmstu_navigator/">
+          <Link to="/Bmstu-navigator/">
             <Button className={styles.cart__actions_back}>Назад</Button>
           </Link>
 
@@ -163,7 +163,7 @@ const Cart = () => {
           ))}
         </div>
         <div className={styles.cart__actions}>
-          <Link to="/Bmstu_navigator/history">
+          <Link to="/Bmstu-navigator/history">
             <Button className={styles.cart__actions_back}>Назад</Button>
           </Link>
         </div>

@@ -2,7 +2,7 @@ import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MainPage from "./pages/MainPage/MainPage";
-import PlanePage from "./pages/PlanePage/PlanePage";
+import RoutePage from "./pages/RoutePage/RoutePage";
 import Breadcrumps from "./components/Breadcrumps/Breadcrumps";
 import RegPage from "./pages/RegPage/RegPage";
 import AuthPage from "./pages/AuthPage/AuthPage";
@@ -90,7 +90,7 @@ function App() {
           path="/Bmstu-navigator/"
           element={<MainPage loading={isLoading} />}
         />
-        <Route path="/Bmstu-navigator/:id" element={<PlanePage />} />
+        <Route path="/Bmstu-navigator/:id" element={<RoutePage />} />
         <Route
           path="/Bmstu-navigator/registration"
           element={<RegPage />}

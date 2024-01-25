@@ -3,11 +3,9 @@ import { useTable, Column } from "react-table";
 import axios from "axios";
 import { Response } from "../../types";
 import moment from "moment";
-
 import styles from "./ApplicationsHistoryTable.module.scss";
 import Cookies from "universal-cookie";
 import { Link } from "react-router-dom";
-import Button from "../Button/Button";
 
 const cookies = new Cookies();
 
@@ -21,7 +19,6 @@ const ApplicationsHistoryTable = () => {
         `http://localhost:8000/Requests/`,
         {
           method: "GET",
-          //   credentials: 'include',
           withCredentials: true,
           headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -114,7 +111,6 @@ const ApplicationsHistoryTable = () => {
           >
             Подробнее&gt;
           </Link>
-          // <Button onClick={() => console.log("aaa")}>Открыть</Button>
         ),
       },
     ],

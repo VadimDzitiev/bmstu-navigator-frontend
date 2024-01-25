@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from "react";
-
 import Button from "../../../components/Button/Button";
-import defPlane from "/src/assets/icons/2.png";
-
-import styles from "./planeinfo.module.scss";
+import styles from "./routeinfo.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { Response } from "../../../types";
-
 import defRoute from "../../../assets/icons/ГЗ-Э.png";
 import { cardInfoProps } from "../../../types";
-import { DOMEN } from "../../../consts";
 import { OptionsMock } from "../../../consts";
 import axios from "axios";
 import { updateCart } from "../../../store/userSlice";
+
 import { toast } from "react-toastify";
-type PlaneInfoProps = {
+type RouteInfoProps = {
   id: string;
 };
 
-const PlaneInfo: React.FC<PlaneInfoProps> = ({ id }) => {
+const RouteInfo: React.FC<RouteInfoProps> = ({ id }) => {
   const dispatch = useDispatch();
   const [mock, setMock] = useState(false);
   const [info, setInfo] = useState<cardInfoProps | undefined>({
@@ -107,4 +103,4 @@ const PlaneInfo: React.FC<PlaneInfoProps> = ({ id }) => {
   );
 };
 
-export default PlaneInfo;
+export default RouteInfo;
