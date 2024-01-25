@@ -1,0 +1,11 @@
+
+.dropdown {
+  &__toggle {
+    background-color: #5c6fff;
+    border: 1px solid #5c6fff;
+
+    &:hover {
+      background-color: rgb(23, 186, 186);
+    }
+  }
+}

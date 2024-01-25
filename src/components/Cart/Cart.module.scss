@@ -1,4 +1,3 @@
-@import "../../styles/variables.scss";
 
 .cart {
   margin: 0 auto;
@@ -36,12 +35,12 @@
     &_back {
       border-radius: 30px;
       &:hover {
-        background-color: $brand-color;
+        background-color: #5c6fff;
       }
     }
     &_send {
       border-radius: 30px;
-      background-color: $brand-color;
+      background-color: #5c6fff;
       color: #fff;
       &:hover {
         background-color: #30b4b4;

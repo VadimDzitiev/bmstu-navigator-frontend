@@ -1,6 +1,5 @@
-@import "../../../styles/variables.scss";
 
-.planeinfo {
+.routeinfo {
   margin-top: 100px;
   display: flex;
   height: 500px;
@@ -39,7 +38,7 @@
     &_subtitle {
       font-size: 20px;
       text-align: left;
-      color: $text-secondary-color;
+      color: #afadb5;
     }
 
     &_actions {

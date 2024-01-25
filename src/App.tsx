@@ -2,13 +2,16 @@ import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MainPage from "./pages/MainPage/MainPage";
-import PlanePage from "./pages/PlanePage/PlanePage";
+import RoutePage from "./pages/RoutePage/RoutePage";
 import Breadcrumps from "./components/Breadcrumps/Breadcrumps";
 import RegPage from "./pages/RegPage/RegPage";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import ApplicationsHistoryTable from "./components/ApplicationsHistoryTable/ApplicationsHistoryTable";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import RoutesList from "./pages/RoutesList/RoutesList"
+import RouteAdminPanel from "./pages/RouteAdminPanel/RouteAdminPanel"
+
 // import store from "./store/store";
 import Cookies from "universal-cookie";
 import { Response, cardInfoProps } from "./types";
@@ -18,8 +21,8 @@ import Cart from "./components/Cart/Cart";
 import CartPage from "./pages/CartPage/CartPage";
 import ApplicationsHistoryPage from "./pages/ApplicationsHistoryPage/ApplicationsHistoryPage";
 import { RootState } from "./store/store";
-import { setOptions } from "./store/filtersSlices";
-import { OptionsMock } from "./consts";
+import { setRoutes } from "./store/filtersSlices";
+import { RoutesMock } from "./consts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sas from "./pages/sas";
@@ -38,10 +41,6 @@ function App() {
         {
           method: "GET",
           withCredentials: true,
-          // headers: {
-          //   "Content-type": "application/json; charset=UTF-8",
-          //   Authorization: `Bearer ${cookies.get("access_token")}`,
-          // },
         }
       );
       console.log(response.data);
@@ -69,13 +68,13 @@ function App() {
 
 
   const createMock = () => {
-    let filteredOptions: cardInfoProps[] = OptionsMock.filter(
-      (option) => option.status == true
+    let filteredRoutes: cardInfoProps[] = RoutesMock.filter(
+      (route) => route.status == true
     );
 
     const [isLoading, setIsLoading] = useState(true);
  
-    dispatch(setOptions(filteredOptions));
+    dispatch(setRoutes(filteredRoutes));
   };
   return (
     <>
@@ -90,7 +89,7 @@ function App() {
           path="/Bmstu-navigator/"
           element={<MainPage loading={isLoading} />}
         />
-        <Route path="/Bmstu-navigator/:id" element={<PlanePage />} />
+        <Route path="/Bmstu-navigator/:id" element={<RoutePage />} />
         <Route
           path="/Bmstu-navigator/registration"
           element={<RegPage />}
@@ -104,6 +103,14 @@ function App() {
         <Route
           path="/Bmstu-navigator/Requests/:id"
           element={<CartPage />}
+        />
+        <Route
+          path="/Bmstu-navigator/routes-list"
+          element={<RoutesList />}
+        />
+        <Route
+          path="/Bmstu-navigator/routes-list/:id"
+          element={<RouteAdminPanel />}
         />
       </Routes>
       <ToastContainer autoClose={1000} pauseOnHover={false} />

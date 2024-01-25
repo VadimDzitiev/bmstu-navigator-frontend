@@ -18,8 +18,36 @@ export const CATEGORIES = [
     name: "Авионика",
   },
 ];
-// import engine from "./assets/engine.png"
-export const OptionsMock = [
+
+
+export const STATUSES = [
+  {
+    id: 0,
+    name: "Все статусы",
+  },
+  // {
+  //   id: 1,
+  //   name: "Черновик",
+  // },
+  // {
+  //   id: 2,
+  //   name: "Удален",
+  // },
+  {
+    id: 3,
+    name: "В работе",
+  },
+  {
+    id: 4,
+    name: "Завершен",
+  },
+  {
+    id: 5,
+    name: "Отклонен",
+  },
+]
+
+export const RoutesMock = [
   {
     id: 1,
     name: "ГЗ",
@@ -27,7 +55,7 @@ export const OptionsMock = [
     description: " Э - ГЗ",
     status: true,
     buildings:"",
-    transition: 'lol',
+    transition: "",
   },
   {
     id: 2,
@@ -36,7 +64,7 @@ export const OptionsMock = [
     description: " Э - ГЗ",
     status: true,
     buildings:"",
-    transition: 'lol',
+    transition: "",
   },
   {
     id: 3,
@@ -45,7 +73,7 @@ export const OptionsMock = [
     description: " Э - ГЗ",
     status: true,
     buildings:"",
-    transition: 'lol',
+    transition: "",
   },
   {
     id: 4,
@@ -54,7 +82,7 @@ export const OptionsMock = [
     description: " Э - ГЗ",
     status: true,
     buildings:"",
-    transition: 'lol',
+    transition: "",
   },
   {
     id: 5,
@@ -63,6 +91,6 @@ export const OptionsMock = [
     description: " Э - ГЗ",
     status: true,
     buildings:"",
-    transition: 'lol',
+    transition: "",
   },
 ];

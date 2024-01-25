@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from "react";
-
 import Button from "../../../components/Button/Button";
-import defPlane from "/src/assets/icons/2.png";
-
-import styles from "./planeinfo.module.scss";
+import styles from "./routeinfo.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { Response } from "../../../types";
-
 import defRoute from "../../../assets/icons/ГЗ-Э.png";
 import { cardInfoProps } from "../../../types";
 import { DOMEN } from "../../../consts";
-import { OptionsMock } from "../../../consts";
+import { RoutesMock } from "../../../consts";
 import axios from "axios";
 import { updateCart } from "../../../store/userSlice";
 import { toast } from "react-toastify";
-type PlaneInfoProps = {
+type RouteInfoProps = {
   id: string;
 };
 
-const PlaneInfo: React.FC<PlaneInfoProps> = ({ id }) => {
+const RouteInfo: React.FC<RouteInfoProps> = ({ id }) => {
   const dispatch = useDispatch();
   const [mock, setMock] = useState(false);
   const [info, setInfo] = useState<cardInfoProps | undefined>({
@@ -40,7 +36,7 @@ const PlaneInfo: React.FC<PlaneInfoProps> = ({ id }) => {
       setInfo(responce.data);
     } catch (error) {
       setMock(true);
-      let filteredGroups: cardInfoProps | undefined = OptionsMock.find(
+      let filteredGroups: cardInfoProps | undefined = RoutesMock.find(
         (group) => group.id == parseInt(id)
       );
       setInfo(filteredGroups);
@@ -48,7 +44,7 @@ const PlaneInfo: React.FC<PlaneInfoProps> = ({ id }) => {
     }
   };
 
-  const addOptionToApp = async (id: number) => {
+  const addRouteToApp = async (id: number) => {
     try {
       const response: Response = await axios(
         `http://localhost:8000/Service/${id}/add_to_request/`,
@@ -70,15 +66,15 @@ const PlaneInfo: React.FC<PlaneInfoProps> = ({ id }) => {
     getInfo();
   }, []);
 
-  const addOptionToCart = (id: number) => {
-    addOptionToApp(id);
+  const addRouteToCart = (id: number) => {
+    addRouteToApp(id);
   };
 
   return (
     <div className={styles.routeinfo}>
       <div className={styles.routeinfo__image}>
         {info && info.transition ? (
-          <img src={info.transition} alt="&&&" style={{ height: '200px' }}/>
+          <img src={info.transition} alt="&&&" style={{ height: '500px' }}/>
         ) : (
           <img
             className={styles.routeinfo__image_img}
@@ -107,4 +103,4 @@ const PlaneInfo: React.FC<PlaneInfoProps> = ({ id }) => {
   );
 };
 
-export default PlaneInfo;
+export default RouteInfo;

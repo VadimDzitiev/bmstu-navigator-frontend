@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Option from "../types";
+import Route from "../types";
 
 const initialState = {
   price_range: [0, 20],
@@ -8,15 +8,15 @@ const initialState = {
     id: 0,
     name: "Любая категория",
   },
-  options: [],
+  routes: [],
 };
 
 const filterSlice = createSlice({
   name: "filters",
   initialState: initialState,
   reducers: {
-    setOptions(state, action) {
-      state.options = action.payload;
+    setRoutes(state, action) {
+      state.routes = action.payload;
     },
     setInputValue(state, action) {
       state.input_value = action.payload;
@@ -38,6 +38,6 @@ export const {
   setDropdownValueId,
   setDropdownValueName,
   setInputValue,
-  setOptions,
+  setRoutes,
 } = filterSlice.actions;
 export default filterSlice.reducer;

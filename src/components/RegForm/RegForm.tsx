@@ -61,12 +61,6 @@ const RegForm = () => {
         <h1>Регистрация</h1>
         <input
           className={styles.regform__block_input}
-          name="fio"
-          type="text"
-          placeholder="Введите ФИО..."
-        ></input>
-        <input
-          className={styles.regform__block_input}
           name="email"
           type="text"
           placeholder="Введите email..."
@@ -80,13 +74,14 @@ const RegForm = () => {
 
         <Button>Зарегистрироваться</Button>
         <span>
+        При наличии аккаунта, { }
           <Link
             className={styles.authlink}
             to={"/Bmstu-navigator/auth"}
           >
-            Авторизируйтесь
+             авторизируйтесь
           </Link>{" "}
-          если у Вас уже есть аккаунт
+          
         </span>
       </form>
     </div>

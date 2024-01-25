@@ -1,39 +1,7 @@
-// import cartSvg from "../../assets/icons/bag-2.svg";
-// import userSvg from "../../assets/icons/user.svg";
-// import styles from "./header.module.scss";
-// import { Link } from "react-router-dom";
-
-// const Header = () => {
-//   return (
-//     <div className={styles.header}>
-//       <div className={styles.container}>
-//         <div className={styles.header__logo}>
-//           <Link to={""} style={{ textDecoration: "none", color: "black" }}>
-//             <div>Навигация МГТУ</div>
-//           </Link>
-//         </div>
-
-//         <div className={styles.header__profile}>
-//           <div className={styles.cart}>
-//             <img src={cartSvg} alt="Cart" />
-//           </div>
-//           <div className={styles.user}>
-//           <Link to="/Bmstu-navigator/auth">
-//             <img src={userSvg} alt="User" />
-//           </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );   
-// };
-
-// export default Header;
-
-
-
+import Optpng from "/src/assets/icons/options.png"
+import Routpng from "/src/assets/icons/route.png";
+import Hispng from "/src/assets/icons/history.png";
 import pic from "/src/assets/icons/2.png";
-import optList from "../../assets/icons/options.png"
 import cartSvg from "../../assets/icons/bag-2.svg";
 import userSvg from "../../assets/icons/user.svg";
 import hisSvg from "/src/assets/icons/history2.svg";
@@ -92,7 +60,7 @@ const Header = () => {
     <div className={styles.header}>
       <div className={styles.container}>
         <div className={styles.header__logo}>
-          <Link to={""} style={{ textDecoration: "none", color: "black" }}>
+          <Link to={""} style={{ textDecoration: "none", color: "white" }}>
             <div>Навигация МГТУ</div>
           </Link>
         </div>
@@ -104,7 +72,7 @@ const Header = () => {
               to="/Bmstu-navigator/history"
             >
               <div className={styles.cart}>
-                <img style={{ width: 27 }} src={hisSvg} alt="History" />
+                <img style={{ width: 50 }} src={Hispng} alt="History" />
               </div>
             </Link>
           )}
@@ -115,20 +83,20 @@ const Header = () => {
             (isCartEmpty != -1 ? (
               <Link to="/Bmstu-navigator/cart">
                 <div className={styles.cart}>
-                  <img src={cartSvg} alt="Cart" />
+                  <img src={Routpng} alt="Cart" />
                   
                 </div>
               </Link>
             ) : (
               <div className={styles.cart}>
-                <img src={cartSvg} alt="Cart" style={{ opacity: "0.5" }} />
+                <img src={Routpng} alt="Cart" style={{ opacity: "0.5" }} />
                 {/* <div>{cart}</div> */}
               </div>
             ))}
           {isModerator && (
-            <Link to="/Bmstu-navigator/options-list">
+            <Link to="/Bmstu-navigator/routes-list">
               <div className={styles.cart}>
-                <img style={{ width: 30 }} src={optList} alt="Cart" />
+                <img style={{ width: 40 }} src={Optpng} alt="Cart" />
               </div>
             </Link>
           )}
@@ -151,7 +119,7 @@ const Header = () => {
         <Link to="Bmstu-navigator/auth">
           <span
             style={{
-              color: "black",
+              color: "white",
               fontSize: "20px",
               textDecoration: "underline",
               cursor: "pointer",

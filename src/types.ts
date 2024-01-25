@@ -1,13 +1,16 @@
 import { AxiosResponse } from "axios";
 import { MouseEventHandler } from "react";
 
-export default interface Option {
+export default interface Route {
   id: number;
   name: string;
 
 }
-
-export interface optionData {
+export interface Status {
+  id: number;
+  name: string;
+}
+export interface routeData {
   id: number;
   name: string;
   transition_time: number;
@@ -32,7 +35,10 @@ export type cardInfoProps = {
   onAddClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-
+export interface Dates {
+  start_date: string
+  end_date: string
+}
 
 export type cartItemProps = {
   id: number;
@@ -45,3 +51,19 @@ export type cartItemProps = {
   updateAllow: boolean;
   onDelete: (id: number) => void;
 };
+
+
+export type requestData = {
+  id: number;
+  status: number;
+  completion_date:string;
+  creation_date:string;
+  formation_date:string;
+  moderator:string;
+  user:Customer;
+  transition_time:string;
+}
+
+interface Customer {
+  email: string
+}

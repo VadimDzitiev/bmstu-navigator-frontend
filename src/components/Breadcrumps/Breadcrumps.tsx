@@ -14,12 +14,13 @@ const Breadcrumps = () => {
       currentLink += `/${crump}`;
 
       if (crump == "history") crump = "История"
-      if (crump == "Bmstu-navigator") crump = "Услуги"
+      if (crump == "Requests") crump = "Заявки"
+      if (crump == "Bmstu-navigator") crump = "Маршруты"
       if (crump == "cart") crump = "Корзина"
       if (crump == "auth") crump = "Авторизация"
       if (crump == "registration") crump = "Регистрация"
       if (crump == "application") crump = "Заказ"
-      if (crump == "options-list") crump = "Список опций"
+      if (crump == "routes-list") crump = "Список опций"
 
       return (
         <div className={styles.crump} key={crump}>

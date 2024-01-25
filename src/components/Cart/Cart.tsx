@@ -123,10 +123,10 @@ const Cart = () => {
           </div>
         </div>
         <div className={styles.cart__content}>
-          {cartItems.map((option) => (
+          {cartItems.map((route) => (
             <CartItem
-              key={option.id}
-              {...option}
+              key={route.id}
+              {...route}
               onDelete={deleteItem}
               updateAllow={true}
             />
@@ -153,10 +153,10 @@ const Cart = () => {
           <div className={styles.cart__header_title}>Заявка №{id}</div>
         </div>
         <div className={styles.cart__content}>
-          {cartItems.map((option) => (
+          {cartItems.map((route) => (
             <CartItem
-              key={option.id}
-              {...option}
+              key={route.id}
+              {...route}
               onDelete={deleteItem}
               updateAllow={false}
             />

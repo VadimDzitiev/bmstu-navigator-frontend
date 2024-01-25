@@ -9,15 +9,15 @@ import SliderFilter from "../../components/Slider/Slider";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import Skeleton from "../../components/Skeleton/Skeleton";
-import { setOptions } from "../../store/filtersSlices";
+import { setRoutes } from "../../store/filtersSlices";
 
 import styles from "./mainpage.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import Option, { optionData } from "../../types";
+import Route, { routeData } from "../../types";
 import { cardInfoProps } from "../../types";
 import { DOMEN, CATEGORIES } from "../../consts";
-import { OptionsMock } from "../../consts";
+import { RoutesMock } from "../../consts";
 import { RootState } from "../../store/store";
 import { Response } from "../../types";
 import { updateCart } from "../../store/userSlice";
@@ -50,9 +50,9 @@ const cookies = new Cookies();
 //     fetch(`http://localhost:8000/Service/${params}`) //!!!!!!!!!!!!!!!
 //       .then((response) => response.json())
 //       .then((data) => {
-//         const options = data['service'];
-//         console.log(options)
-//         setItems(options);
+//         const routes = data['service'];
+//         console.log(routes)
+//         setItems(routes);
 //         setIsLoading(false);
 //       })
 //       .catch(() => {
@@ -62,29 +62,29 @@ const cookies = new Cookies();
 //   }, [searchValue, sliderValues, categoryValue]);
 
 //   const createMock = () => {
-//     let filteredOptions: cardInfoProps[] = OptionsMock.filter(
-//       (option) => option.status == true
+//     let filteredRoutes: cardInfoProps[] = RoutesMock.filter(
+//       (route) => route.status == true
 //     );
 
 //     if (searchValue) {
-//       filteredOptions = filteredOptions.filter((option) =>
-//         option.name.includes(searchValue)
+//       filteredRoutes = filteredRoutes.filter((route) =>
+//         route.name.includes(searchValue)
 //       );
 //     }
 
 //     if (sliderValues) {
-//       filteredOptions = filteredOptions.filter(
-//         (option) =>
-//           option.transition_time > sliderValues[0] && option.transition_time < sliderValues[1]
+//       filteredRoutes = filteredRoutes.filter(
+//         (route) =>
+//           route.transition_time > sliderValues[0] && route.transition_time < sliderValues[1]
 //       );
 //     }
 
 //     if (categoryValue != "Любая категория") {
-//       filteredOptions = filteredOptions.filter(
-//         (option) => option.name == categoryValue
+//       filteredRoutes = filteredRoutes.filter(
+//         (route) => route.name == categoryValue
 //       );
 //     }
-//     setItems(filteredOptions);
+//     setItems(filteredRoutes);
 //   };
 
 //   return (
@@ -135,11 +135,11 @@ const MainPage = () => {
   const sliderValue = useSelector(
     (state: RootState) => state.filter.price_range
   );
-  // const options = useSelector((state: RootState) => state.filter.options);
-  const [options,setOptions]=useState<optionData[]>([])
+  // const routes = useSelector((state: RootState) => state.filter.routes);
+  const [routes,setRoutes]=useState<routeData[]>([])
   useEffect(()=>{fetchData()},[sliderValue,searchValue])
   
-  const addOptionToApp = async (id: number) => {
+  const addRouteToApp = async (id: number) => {
     try {
       const response: Response = await axios(
         `http://localhost:8000/Service/${id}/add_to_request/`,
@@ -167,13 +167,13 @@ const MainPage = () => {
   ) => {
     e.stopPropagation();
     e.preventDefault();
-    addOptionToApp(id);
+    addRouteToApp(id);
     fetchData();
   };
 
   const createMock = () => {
-    let filteredOptions: cardInfoProps[] = OptionsMock.filter(
-      (option) => option.status == true
+    let filteredRoutes: cardInfoProps[] = RoutesMock.filter(
+      (route) => route.status == true
     );
   }
   const fetchData = async () => {
@@ -191,11 +191,11 @@ const MainPage = () => {
         },
       });
       console.log(response.data);
-      const options = response.data.service;
+      const routes = response.data.service;
       if (response.data.app_id) {
         dispatch(updateCart(response.data.app_id));
       }
-      setOptions(options)
+      setRoutes(routes)
       setIsLoading(false);
     } catch (error) {
       createMock();
@@ -227,7 +227,7 @@ const MainPage = () => {
           {isLoading ? (
             [...new Array(6)].map((_, index) => <Skeleton key={index} />)
           ) : (
-            options.map((item) => (
+            routes.map((item) => (
               <Link
                 to={`/Bmstu-navigator/${item.id}`}
                 key={item.id}
