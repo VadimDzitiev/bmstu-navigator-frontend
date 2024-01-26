@@ -80,11 +80,6 @@ const Cart = () => {
         `http://localhost:8000/Requests/${cartApplication}/delete_service/${itemId}/`,
         {
           method: "DELETE",
-          // withCredentials: true,
-          // headers: {
-          //   "Content-type": "application/json; charset=UTF-8",
-          //   Authorization: `Bearer ${cookies.get("access_token")}`,
-          // },
         }
       );
       console.log(responce);

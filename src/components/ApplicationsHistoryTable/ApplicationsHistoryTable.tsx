@@ -41,7 +41,6 @@ const ApplicationsHistoryTable = () => {
         `http://localhost:8000/Requests/${params}`,
         {
           method: "GET",
-          //   credentials: 'include',
           withCredentials: true,
           headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -54,7 +53,7 @@ const ApplicationsHistoryTable = () => {
           (a: { creation_date: Date }, b: { creation_date: Date }) => {
             const dateA = new Date(a.creation_date).getTime()
             const dateB = new Date(b.creation_date).getTime()
-            return dateB - dateA // for descending order
+            return dateB - dateA
           }
         )
         console.log(response.data)
@@ -94,7 +93,6 @@ const ApplicationsHistoryTable = () => {
     dispatch(setAppDropdownValueId(Selected.id))
   }
   useEffect(() => {
-    // fetchAppsData()
     const intervalId = setInterval(() => {
       fetchAppsData()
     }, 1000)
@@ -183,7 +181,6 @@ const ApplicationsHistoryTable = () => {
           >
             Подробнее&gt;
           </Link>
-          // <Button onClick={() => console.log("aaa")}>Открыть</Button>
         ),
       },
       {

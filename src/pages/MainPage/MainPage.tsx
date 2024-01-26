@@ -1,21 +1,16 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
-// import InfoBlock from "../../components/InfoBlock/InfoBlock";
 import Card from "../../components/Card/Card";
-// import DropDown from "../../components/Dropdown/Dropdown";
 import SliderFilter from "../../components/Slider/Slider";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import Skeleton from "../../components/Skeleton/Skeleton";
-import { setRoutes } from "../../store/filtersSlices";
 import styles from "./mainpage.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import Route, { routeData } from "../../types";
+import  { routeData } from "../../types";
 import { cardInfoProps } from "../../types";
-import { DOMEN, CATEGORIES } from "../../consts";
 import { RouteMock } from "../../consts";
 import { RootState } from "../../store/store";
 import { Response } from "../../types";
@@ -34,7 +29,6 @@ const MainPage = () => {
   const sliderValue = useSelector(
     (state: RootState) => state.filter.price_range
   );
-  // const routes = useSelector((state: RootState) => state.filter.routes);
   const [routes,setRoutes]=useState<routeData[]>([])
   useEffect(()=>{fetchData()},[sliderValue,searchValue])
   

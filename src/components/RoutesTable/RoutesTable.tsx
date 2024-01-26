@@ -6,7 +6,6 @@ import { Response } from "../../types"
 import styles from "./routestable.module.scss"
 import Button from "../Button/Button"
 import deleteIcom from "../../assets/icons/delete.png"
-// import editIcon from "/assets/icons/edit.png"
 import { Link } from "react-router-dom"
 
 const RoutesTable = () => {
@@ -17,12 +16,8 @@ const RoutesTable = () => {
       axios.defaults.withCredentials = true
       const response: Response = await axios(`http://localhost:8000/Service/`, {
         method: "GET",
-        //   credentials: 'include',
+
         withCredentials: true,
-        //   headers: {
-        //     "Content-type": "application/json; charset=UTF-8",
-        //     Authorization: `Bearer ${cookies.get("access_token")}`,
-        //   },
       })
       console.log(response.data);
       const routes = response.data.service;

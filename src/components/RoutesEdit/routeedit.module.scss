@@ -1,18 +1,12 @@
 
 
 .edit-form {
-  // display: flex;
-  // justify-content: space-between;
-  // gap: 40px;
-  //   width: 500px;
-  //   margin: 0 auto;
-  //   background-color: #5c6fff;
+
   &__block {
     display: flex;
     gap: 40px;
-    // width: 70%;
     justify-content: space-between;
-    // flex-direction: column;
+
     &_text {
       display: flex;
       flex-direction: column;

@@ -33,6 +33,3 @@ const store = configureStore({
 });
 
 export default store;
-
-// Экспортируйте тип RootState
-// export type RootState = ReturnType<typeof store.getState>;

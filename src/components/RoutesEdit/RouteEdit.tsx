@@ -115,7 +115,6 @@ const ServiceEdit = () => {
 
   const handleStatusChange = (selectedTeacher: Status) => {
     setStatus(selectedTeacher)
-    // console.log(status)
   }
 
   return (

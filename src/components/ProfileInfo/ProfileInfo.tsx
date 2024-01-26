@@ -1,13 +1,10 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./ProfileInfo.module.scss";
 import Cookies from "universal-cookie";
-import { RootState } from "../../store/store"; // Импортируйте тип RootState из вашего файла store
-// import { Button } from "react-bootstrap";
-import Button from "../Button/Button";
+import { RootState } from "../../store/store";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { cleanUser, updateUser } from "../../store/userSlice";
+import { cleanUser,} from "../../store/userSlice";
 import { toast } from "react-toastify";
 
 const cookies = new Cookies();

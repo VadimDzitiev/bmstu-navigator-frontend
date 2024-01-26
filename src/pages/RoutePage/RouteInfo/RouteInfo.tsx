@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Response } from "../../../types";
 import defRoute from "../../../assets/icons/ГЗ-Э.png";
 import { cardInfoProps } from "../../../types";
-import { DOMEN } from "../../../consts";
 import { RouteMock } from "../../../consts";
 import axios from "axios";
 import { updateCart } from "../../../store/userSlice";

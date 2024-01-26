@@ -1,31 +1,21 @@
 import Optpng from "/src/assets/icons/options.png"
 import Routpng from "/src/assets/icons/route.png";
 import Hispng from "/src/assets/icons/history.png";
-import pic from "/src/assets/icons/2.png";
-import cartSvg from "../../assets/icons/bag-2.svg";
-import userSvg from "../../assets/icons/user.svg";
-import hisSvg from "/src/assets/icons/history2.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom"
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react"
-
-import React from "react";
+import { useState } from "react"
 import styles from "./header.module.scss";
 import Cookies from "universal-cookie";
-import { RootState } from "../../store/store"; // Импортируйте тип RootState из вашего файла store
-// import { Button } from "react-bootstrap";
-import Button from "../Button/Button";
+import { RootState } from "../../store/store";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { cleanUser, updateUser } from "../../store/userSlice";
+import { cleanUser} from "../../store/userSlice";
 import { toast } from "react-toastify";
 
 
 const cookies = new Cookies();
 const Header = () => {
   const location = useLocation()
-  // const cart = useSelector((state: RootState) => state.cart.items.length)
   const [v, sV] = useState(false)
   const user = useSelector((state: RootState) => state.user);
   const isAuth = useSelector((state: RootState) => state.user.is_authenticated)

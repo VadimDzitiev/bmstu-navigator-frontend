@@ -6,25 +6,20 @@ import RoutePage from "./pages/RoutePage/RoutePage";
 import Breadcrumps from "./components/Breadcrumps/Breadcrumps";
 import RegPage from "./pages/RegPage/RegPage";
 import AuthPage from "./pages/AuthPage/AuthPage";
-import ApplicationsHistoryTable from "./components/ApplicationsHistoryTable/ApplicationsHistoryTable";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import RoutesList from "./pages/RoutesList/RoutesList"
 import RouteAdminPanel from "./pages/RouteAdminPanel/RouteAdminPanel"
 import Cookies from "universal-cookie";
 import { Response, cardInfoProps } from "./types";
-import { updateCart, updateUser } from "./store/userSlice";
+import { updateUser } from "./store/userSlice";
 import React, { useState } from "react";
-import Cart from "./components/Cart/Cart";
 import CartPage from "./pages/CartPage/CartPage";
-import ApplicationsHistoryPage from "./pages/ApplicationsHistoryPage/ApplicationsHistoryPage";
-import { RootState } from "./store/store";
 import { setRoutes } from "./store/filtersSlices";
 import { RouteMock } from "./consts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Sas from "./pages/sas";
-import loading from "./pages/MainPage/MainPage";
+import ApplicationsHistoryPage from "./pages/ApplicationsHistoryPage/ApplicationsHistoryPage";
 const cookies = new Cookies();
 function App() {
   const url = window.location.pathname.split("/").pop();

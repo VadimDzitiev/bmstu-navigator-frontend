@@ -26,7 +26,6 @@ const AuthForm = () => {
         },
         data: formData as FormData,
       });
-      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       cookies.set("access_token", response.data["access_token"], {
         path: "/",
         expires: new Date(Date.now() + 25920000),

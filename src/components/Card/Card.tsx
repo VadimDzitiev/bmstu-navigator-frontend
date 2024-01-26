@@ -1,18 +1,14 @@
 import React from "react";
 import Button from "../Button/Button";
 import styles from "./card.module.scss";
-
 import defBuilding from "/src/assets/icons/ГЗ.png";
 import { cardInfoProps } from "../../types";
 import Cookies from "universal-cookie";
-import axios from "axios";
-import { updateCart } from "../../store/userSlice";
-import { useDispatch, useSelector } from "react-redux";
+
 const cookies = new Cookies();
-// import svg from "../../assets/react.svg"
 
 const Card: React.FC<cardInfoProps> = ({ name, transition_time, description, transition, buildings, onAddClick,}) => {
-  // const dispatch = useDispatch();
+
   return (
     <div className={styles.card}>
       <div className={styles.card__image}>
