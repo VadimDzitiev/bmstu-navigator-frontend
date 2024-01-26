@@ -6,7 +6,7 @@ import { Response } from "../../../types";
 import defRoute from "../../../assets/icons/ГЗ-Э.png";
 import { cardInfoProps } from "../../../types";
 import { DOMEN } from "../../../consts";
-import { RoutesMock } from "../../../consts";
+import { RouteMock } from "../../../consts";
 import axios from "axios";
 import { updateCart } from "../../../store/userSlice";
 import { toast } from "react-toastify";
@@ -36,7 +36,7 @@ const RouteInfo: React.FC<RouteInfoProps> = ({ id }) => {
       setInfo(responce.data);
     } catch (error) {
       setMock(true);
-      let filteredGroups: cardInfoProps | undefined = RoutesMock.find(
+      let filteredGroups: cardInfoProps | undefined = RouteMock.find(
         (group) => group.id == parseInt(id)
       );
       setInfo(filteredGroups);
@@ -74,7 +74,7 @@ const RouteInfo: React.FC<RouteInfoProps> = ({ id }) => {
     <div className={styles.routeinfo}>
       <div className={styles.routeinfo__image}>
         {info && info.transition ? (
-          <img src={info.transition} alt="&&&" style={{ height: '500px' }}/>
+          <img src={info.transition} alt="&&&" style={{ height: '450px',width: '450px' }}/>
         ) : (
           <img
             className={styles.routeinfo__image_img}

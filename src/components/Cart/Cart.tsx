@@ -58,15 +58,11 @@ const Cart = () => {
       };
 
       const response: Response = await axios(
-        `http://localhost:8000/Requests/${cartApplication}/update_by_user/`,
+        `http://localhost:8000/Requests/update_by_user/`,
         {
           method: "PUT",
           data: updatedData,
           withCredentials: false,
-          // headers: {
-          //   "Content-type": "application/json; charset=UTF-8",
-          //   Authorization: `Bearer ${cookies.get("access_token")}`,
-          // },
         }
       );
 

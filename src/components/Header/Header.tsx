@@ -33,9 +33,9 @@ const Header = () => {
   const isCartEmpty = useSelector((state: RootState) => state.user.current_cart)
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   console.log("header render")
-  // }, [cart])
+  const currentCart = useSelector(
+    (state: RootState) => state.user.current_cart
+  );
   
   const logout = async () => {
     try {
@@ -81,16 +81,14 @@ const Header = () => {
             isAuth &&
             !isModerator &&
             (isCartEmpty != -1 ? (
-              <Link to="/Bmstu-navigator/cart">
+              <Link to={`/Bmstu-navigator/Requests/${currentCart}`}>
                 <div className={styles.cart}>
                   <img src={Routpng} alt="Cart" />
-                  
                 </div>
               </Link>
             ) : (
               <div className={styles.cart}>
                 <img src={Routpng} alt="Cart" style={{ opacity: "0.5" }} />
-                {/* <div>{cart}</div> */}
               </div>
             ))}
           {isModerator && (

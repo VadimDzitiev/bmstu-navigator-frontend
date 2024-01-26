@@ -11,8 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import RoutesList from "./pages/RoutesList/RoutesList"
 import RouteAdminPanel from "./pages/RouteAdminPanel/RouteAdminPanel"
-
-// import store from "./store/store";
 import Cookies from "universal-cookie";
 import { Response, cardInfoProps } from "./types";
 import { updateCart, updateUser } from "./store/userSlice";
@@ -22,7 +20,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import ApplicationsHistoryPage from "./pages/ApplicationsHistoryPage/ApplicationsHistoryPage";
 import { RootState } from "./store/store";
 import { setRoutes } from "./store/filtersSlices";
-import { RoutesMock } from "./consts";
+import { RouteMock } from "./consts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sas from "./pages/sas";
@@ -68,7 +66,7 @@ function App() {
 
 
   const createMock = () => {
-    let filteredRoutes: cardInfoProps[] = RoutesMock.filter(
+    let filteredRoutes: cardInfoProps[] = RouteMock.filter(
       (route) => route.status == true
     );
 

@@ -10,14 +10,13 @@ import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import { setRoutes } from "../../store/filtersSlices";
-
 import styles from "./mainpage.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Route, { routeData } from "../../types";
 import { cardInfoProps } from "../../types";
 import { DOMEN, CATEGORIES } from "../../consts";
-import { RoutesMock } from "../../consts";
+import { RouteMock } from "../../consts";
 import { RootState } from "../../store/store";
 import { Response } from "../../types";
 import { updateCart } from "../../store/userSlice";
@@ -26,106 +25,6 @@ import { setInputValue } from "../../store/filtersSlices";
 import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
-// const MainPage = () => {
-//   const [items, setItems] = useState<cardInfoProps[]>([]);
-
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [searchValue, setSearchValue] = useState("");
-//   const [sliderValues, setSliderValues] = useState([0, 20]);
-//   const [categoryValue, setCategoryValue] = useState("Любая категория");
-
-//   const handleSliderChange = (values: number[]) => {
-//     setSliderValues(values);
-//   };
-
-
-//   useEffect(() => {
-//     const params = searchValue
-//       ? `?search=${encodeURIComponent(searchValue)}&min_time=${
-//           sliderValues[0]
-//         }&max_time=${sliderValues[1]}`
-//       : `?min_time=${sliderValues[0]}&max_time=${
-//           sliderValues[1]
-//         }`;
-//     fetch(`http://localhost:8000/Service/${params}`) //!!!!!!!!!!!!!!!
-//       .then((response) => response.json())
-//       .then((data) => {
-//         const routes = data['service'];
-//         console.log(routes)
-//         setItems(routes);
-//         setIsLoading(false);
-//       })
-//       .catch(() => {
-//         createMock();
-//         setIsLoading(false);
-//       });
-//   }, [searchValue, sliderValues, categoryValue]);
-
-//   const createMock = () => {
-//     let filteredRoutes: cardInfoProps[] = RoutesMock.filter(
-//       (route) => route.status == true
-//     );
-
-//     if (searchValue) {
-//       filteredRoutes = filteredRoutes.filter((route) =>
-//         route.name.includes(searchValue)
-//       );
-//     }
-
-//     if (sliderValues) {
-//       filteredRoutes = filteredRoutes.filter(
-//         (route) =>
-//           route.transition_time > sliderValues[0] && route.transition_time < sliderValues[1]
-//       );
-//     }
-
-//     if (categoryValue != "Любая категория") {
-//       filteredRoutes = filteredRoutes.filter(
-//         (route) => route.name == categoryValue
-//       );
-//     }
-//     setItems(filteredRoutes);
-//   };
-
-//   return (
-//     <div className={styles.mainpage}>
-//       <div className={styles.container}>
-//         <InfoBlock />
-//         <div className={styles.mainpage__actions}>
-//           <div className={styles.mainpage__input}>
-//             <Input onChangeValue={(i) => setSearchValue(i)} />
-//             <Button>Поиск</Button>
-//           </div>
-//           <div className={styles.mainpage__filters}>
-//             {/* <SliderFilter
-//               onChangeValues={handleSliderChange}
-//               minimum={0}
-//               maximum={20}
-//               title="Время"
-//             /> */}
-//           </div>
-//         </div>
-
-//         <div className={styles.mainpage__inner}>
-//           {isLoading
-//             ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-//             : items.map((item: cardInfoProps) => (
-//                 <Link
-//                   to={`/Bmstu-navigator/${item.id}`}
-//                   key={item.id}
-//                   style={{ textDecoration: "none", color: "black" }}
-//                 >
-//                   <Card key={item.id} {...item} />
-//                 </Link>
-//               ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default MainPage;
-
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -172,7 +71,7 @@ const MainPage = () => {
   };
 
   const createMock = () => {
-    let filteredRoutes: cardInfoProps[] = RoutesMock.filter(
+    let filteredRoutes: cardInfoProps[] = RouteMock.filter(
       (route) => route.status == true
     );
   }
