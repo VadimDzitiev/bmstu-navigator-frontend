@@ -1,0 +1,29 @@
+
+.infoblock {
+  background-color: #ffffff;
+  color: #000;
+  padding: 20px;
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .infoblock__title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__title_text {
+        font-size: 240px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      &__title_gif {
+        width: 50px;
+        height: auto;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+
+.breadcrumps {
+  text-align: left;
+  max-width: 1240px;
+  margin: 10px auto;
+}
+
+.breadcrumps > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.crump {
+  &:after {
+    color: #000;
+    content: "->";
+    margin-left: 10px;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+
+  a {
+    color: #000;
+  }
+}

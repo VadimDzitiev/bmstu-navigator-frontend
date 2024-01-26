@@ -1,0 +1,37 @@
+
+.mainpage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 75px;
+    grid-row-gap: 30px;
+  }
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__input {
+    display: flex;
+    
+    gap: 50px;
+  }
+
+  &__filters {
+    display: flex;
+    gap: 100px;
+  }
+}

@@ -1,0 +1,40 @@
+
+.header {
+  background-color: #5c6fff;
+  border-bottom: 1px solid #ffffff;
+  padding: 32px;
+  
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-size: 50px;
+    color: #ffffff;
+    flex-grow: 1;
+    text-align: center;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  &__profile {
+    display: flex;
+    gap: 15px;
+    color: #ffffff;
+  }
+  
+   .route img {
+      width: 50px;
+      height: 50px;
+    }
+    .user img {
+      width: 50px;
+      height: 50px;
+    }
+}
