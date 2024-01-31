@@ -166,7 +166,7 @@ const ApplicationsHistoryTable = () => {
         ),
       },
       {
-        Header: "Заказчик",
+        Header: "Студент",
         accessor: "user.email",
       },
       {
